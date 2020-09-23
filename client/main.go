@@ -33,20 +33,20 @@ func main() {
 	log.Println("Creating gRPC health-check client")
 	healthClient := healthpb.NewHealthClient(grpcConnection)
 
-	log.Println("Creating gRPC client")
-	grpcClient := proto.NewGreeterClient(grpcConnection)
+	// log.Println("Creating gRPC client")
+	// grpcClient := proto.NewGreeterClient(grpcConnection)
 
 	log.Println("Creating gRPC client")
-	counter := 0
+	// counter := 0
 	for {
-		if counter%3 == 0 {
-			go check(healthClient)
-			time.Sleep(1 * time.Second)
-		}
+		// if counter%3 == 0 {
+		go check(healthClient)
+		time.Sleep(1 * time.Second)
+		// }
 
-		go greet(grpcClient)
-		time.Sleep(3 * time.Second)
-		counter++
+		// go greet(grpcClient)
+		// time.Sleep(3 * time.Second)
+		// counter++
 	}
 }
 

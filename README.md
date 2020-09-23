@@ -12,54 +12,66 @@ Example project to understand gRPC health-check in Golang
 ## Build
 
 1. Server
-	```shell
+
+    ```shell script
     make build-server
     # or
-	go build -o grpc-server ./server
-	```
+    go build -o grpc-server ./server
+    ```
 
 2. Client
-	```shell
+
+    ```shell script
     make build-client
     # or
-	go build -o grpc-client ./client
-	```
+    go build -o grpc-client ./client
+    ```
 
 ---
 
 ## Run
 
 1. Run server
-	```shell
+
+    ```shell script
     make run-server
     # or
-	./grpc-server
-	```
+    ./grpc-server
+    ```
 
 2. In another shell, run client
-	```shell
+	
+    ```shell script
     make run-client
     # or
-	./grpc-client
-	```
+    ./grpc-client
+    ```
 
 ### From source
 
 1. Run server
-	```shell
+
+    ```shell script
     make run-server-src
     # or
     protoc --proto_path=./proto/ --go_out=plugins=grpc:domain ./proto/*
-	GO111MODULE=on go run ./server/main.go
-	```
+    GO111MODULE=on go run ./server/main.go
+    ```
 
 2. In another shell, run client
-	```shell
+	
+    ```shell script
     make run-client-src
     # or
     protoc --proto_path=./proto/ --go_out=plugins=grpc:domain ./proto/*
-	GO111MODULE=on go run ./client/main.go
-	```
+    GO111MODULE=on go run ./client/main.go
+    ```
+
+---
+
+## Health check
+
+
 
 ---
 
